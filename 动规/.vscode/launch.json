@@ -1,0 +1,50 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    
+        {
+            "type": "java",
+            "name": "Solution",
+            "request": "launch",
+            "mainClass": "Solution",
+            "projectName": "动规_de5a7215"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "ClimbLadderSolution",
+            "request": "launch",
+            "mainClass": "ClimbLadderSolution",
+            "projectName": "动规_de5a7215"
+        },
+        {
+            "type": "java",
+            "name": "FabonacciSolution",
+            "request": "launch",
+            "mainClass": "FabonacciSolution",
+            "projectName": "动规_de5a7215"
+        },
+        {
+            "type": "java",
+            "name": "MinCostClimbStairs",
+            "request": "launch",
+            "mainClass": "MinCostClimbStairs",
+            "projectName": "动规_de5a7215"
+        },
+        {
+            "type": "java",
+            "name": "UniquePathsSolution",
+            "request": "launch",
+            "mainClass": "UniquePathsSolution",
+            "projectName": "动规_de5a7215"
+        }
+    ]
+}
