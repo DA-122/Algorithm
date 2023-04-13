@@ -1,11 +1,11 @@
 // 力扣617. 合并二叉树
 // 思路分析： 递归
 public class Solution {
-    public static TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
+    public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
         TreeNode root = merge(root1,root2);
         return root;
     }
-    public static TreeNode merge(TreeNode node1, TreeNode node2){
+    public TreeNode merge(TreeNode node1, TreeNode node2){
         if(node1==null ){
             return node2;
         }
