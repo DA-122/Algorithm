@@ -44,10 +44,6 @@ public class Solution{
         }
         return ans;
     }
-    public static int longestDecomposition2(String text){
-
-    }
-
 
     public static void main(String[] args){
         String text ="aaa";
