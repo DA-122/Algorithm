@@ -1,5 +1,7 @@
 // 力扣1033 移动石子直到连续
 // 模拟
+import java.util.Arrays;
+
 public class Solution{
     public int[] numMovesStones(int a, int b, int c) {
         int stones[] = new int[3];
