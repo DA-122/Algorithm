@@ -1,5 +1,8 @@
 // 力扣1042. 不邻接植花
 // 思路分析： 图染色问题
+
+import java.util.ArrayList;
+
 public class Solution{
     public static int[] gardenNoAdj(int n, int[][] paths) {
         int ans[] = new int[n];

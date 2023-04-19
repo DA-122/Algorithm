@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-// 剑指03 数组中的个重复数字
+// 剑指03 数组中的重复数字
 // 思路分析：1.哈希表 空间复杂度O(N)，时间复杂度O(N)
 // 2. 原地交换, 时间复杂度O(N),空间复杂度O(1)
 public class Solution{
