@@ -40,9 +40,11 @@ public class Solution {
     }
     public static void main(String[] args){
         int[][] arg = {
-            {0,0,0},
-            {0,1,0},
-            {0,0,0}
+            {0,0,0,0,0,0},
+            {0,0,0,1,0,0},
+            {0,0,0,0,0,0},
+            {0,0,0,0,0,0},
+            {0,0,0,0,0,0},
         };
         System.out.println("Recursion:"+uniquePathsWithObstacles(arg));
     }

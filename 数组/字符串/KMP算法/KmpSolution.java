@@ -1,3 +1,4 @@
+
 public class KmpSolution {
     public static boolean bruteForce(String pattern, String target){
         
