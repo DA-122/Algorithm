@@ -5,3 +5,4 @@ public class Main{
         s.minScoreTriangulation(values);
     }
 }
+
