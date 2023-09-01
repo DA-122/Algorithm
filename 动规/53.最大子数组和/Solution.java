@@ -6,40 +6,32 @@
 // dp[i-1] <= 0 , dp[i] = nums[i];
 // 初始化: dp[0] = nums[0] 
 public class Solution {
-    // 排除法 + dp
-    public static int maxSubArray(int[] nums) {
-        int dp[] = new int[nums.length+1];
-        if(nums[0] > 0){
-            dp[0] = nums[0];
-        }else{
-            dp[0] = 0;
-        }
-        int ans = dp[0];
-        int max = nums[0];
-        for(int i = 1; i < nums.length; i++){
-            dp[i] = Math.max(0,dp[i-1]+nums[i]);
-            max = Math.max(nums[i],max);
-            ans = Math.max(dp[i],ans);
-        }
-        return max>0? ans:max;
-    }
-    // 纯dp
+    // dp 可以看到 dp[i] 只与 dp[i-1] 有关
     public static int maxSubArray2(int[] nums) {
-        int dp[] = new int[nums.length];
-        int ans = nums[0];
-        dp[0] = nums[0];
-        for(int i = 1; i < nums.length; i++){
-            if(dp[i-1] > 0){
-                dp[i] = dp[i-1]+nums[i];
-            }else{
-                dp[i] = nums[i];
-            }
-            ans = Math.max(dp[i],ans);
+        int n = nums.length;
+        int res = Integer.MIN_VALUE;
+        int dp[] = new int[n+1];
+        for(int i = 1; i < n + 1; i++){
+            dp[i] = Math.max(dp[i-1]+ nums[i-1], nums[i-1]);
+            res = Math.max(res,dp[i]);
         }
-        return ans;
+        return res;
     }
+    // 滚动数组优化
+    public int maxSubArray3(int[] nums) {
+        int n = nums.length;
+        int pre = nums[0];
+        int res = pre;
+        for(int i = 1; i < n; i++){
+            pre = Math.max(pre + nums[i], pre);
+            res = Math.max(pre,res);
+        }
+        return res;
+    }
+
+
     public static void main(String[] args){
         int[] nums1 = {-2,1,-3,4,-1,2,1,-5,4};
-        System.out.println(maxSubArray(nums1));
+        System.out.println(maxSubArray2(nums1));
     }
 }

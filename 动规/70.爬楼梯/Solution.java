@@ -13,6 +13,7 @@ public class Solution {
             return climbStairs(n-1)+climbStairs(n-2);
     }
     // 迭代方法
+    // 可以使用两个数字优化空间复杂度
     public static int  climbStairsIter(int n){
         if(n == 1)
             return 1;

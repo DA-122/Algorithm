@@ -3,7 +3,9 @@
 // 因此想到哈希表+visited数组去重复。
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Solution {
     public int longestConsecutive(int[] nums) {
@@ -27,4 +29,30 @@ public class Solution {
         }
         return res;
     }
+    // 一个set即可，访问过后remove访问元素
+    public int longestConsecutive2(int[] nums) {
+        if(nums.length == 0){
+            return 0;
+        }
+        Set<Integer> set = new HashSet<>();
+        int maxlen =  1;
+        for(int num: nums){
+            set.add(num);
+        }
+        for(int num: nums){
+            int left = num - 1, right = num + 1;
+            while(set.contains(right)){
+                set.remove(right);
+                right++;
+            }
+            while(set.contains(left)){
+                set.remove(left);
+                left--;
+            }
+            maxlen = Math.max(right - left - 1, maxlen);
+
+        }
+        return maxlen;
+    }
+
 }

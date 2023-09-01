@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
-    public int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstring(String s) {
         if(s.length() == 0){
             return 0;
         }
@@ -25,4 +25,9 @@ public class Solution {
         max = Math.max(max,right - left);
         return max;
     }
+    public static void main(String[] args){
+        String s = "ABBA";
+        lengthOfLongestSubstring(s);      
+    }
+
 }

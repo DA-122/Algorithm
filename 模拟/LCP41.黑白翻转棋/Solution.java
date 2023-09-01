@@ -1,6 +1,9 @@
 // LCP 黑白翻转棋
 // 思路分析 bfs 遍历棋盘
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class Solution {
     int[][] move= {{1,0},{-1,0},{0,1},{0,-1},{1,1},{1,-1},{-1,1},{-1,-1}};
 

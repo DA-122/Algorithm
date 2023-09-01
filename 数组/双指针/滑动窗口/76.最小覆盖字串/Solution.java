@@ -56,9 +56,59 @@ public class Solution {
         }
         return min==s.length()+1 ? "":s.substring(start,end);
     }
+    public static String minWindow2(String s, String t) {
+        if(s.length() < t.length()){
+            return "";
+        }
+        String res = "";
+        int min = Integer.MAX_VALUE;
+        Map<Character, Integer> map = new HashMap<>();
+                int left = 0; int right = 0;
+        for(char c: t.toCharArray()){
+            map.put(c,map.getOrDefault(c,0) + 1);
+        }
+        int diff = map.size();
+        // 向右扩张
+        while(right < s.length()){
+            char r = s.charAt(right);
+            if(map.containsKey(r)){
+                // 所需字符数减1
+                if(map.get(r) == 1){
+                    diff--;
+                }
+                map.put(r,map.get(r) - 1);
+            }
+            // 所需字符足够
+            if(diff == 0){
+                // 左边界收缩
+                // 不包含left字符 或者left字符有冗余
+                while(left < right){
+                    char l = s.charAt(left);
+                    if(map.containsKey(l)){
+                        if(map.get(l) < 0){
+                            map.put(l,map.get(l) + 1);
+                        }else{
+                            break;
+                        }
+                    }
+                    left++;
+                }
+                // 更新 res
+                if(right - left + 1 < min){
+                    res = s.substring(left,right + 1);
+                    min = right - left + 1;
+                }
+            }
+            right++;
+        }
+        
+        return res;
+    }
+
+
     public static void main(String [] args){
         String s = "ADOBECODEBANC";
         String t = "ABC";
-        System.out.println(minWindow(s,t));
+        System.out.println(minWindow2(s,t));
     }
 }

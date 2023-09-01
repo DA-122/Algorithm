@@ -1,5 +1,5 @@
 // 力扣96 不同的二叉搜索树
-
+// 卡塔兰数
 public class Solution {
     public static int numTrees(int n) {
         int [] dp = new int[n+1];

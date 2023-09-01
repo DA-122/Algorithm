@@ -11,7 +11,6 @@ public class Solution{
         trie.insert("apple");
     }
 }
-
 class Trie {
     Node root;
     Set<String> set;
